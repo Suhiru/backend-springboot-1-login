@@ -11,17 +11,19 @@ public class RegistrationService {
     @Autowired
     private RegistrationRepository registrationRepository;
 
+    //Save Users
     public User saveUser(User user){
 
        return registrationRepository.save(user);
 
     }
-
+    //Find Users By Id
     public User findUserByEmailId(String emailId){
 
         return registrationRepository.findUserByEmailId(emailId);
     }
 
+    //Authenticate
     public User findUserByEmailIdAndPassword(String emailId , String password){
 
         return registrationRepository.findUserByEmailIdAndPassword(emailId,password);
