@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class RegistrationController {
 
     @Autowired
@@ -18,7 +19,6 @@ public class RegistrationController {
 
     //User registration Controller
     @PostMapping("/registerUser")
-    @CrossOrigin(origins = "http://localhost:4200/")
     public User registerUser(@RequestBody User user) throws Exception {
 
         String tempMailId = user.getEmailId();
@@ -36,7 +36,6 @@ public class RegistrationController {
 
     //User login controller
     @PostMapping("/login")
-    @CrossOrigin(origins = "http://localhost:4200/")
     public User userLogin(@RequestBody User user) throws Exception {
 
         String tempEmailId = user.getEmailId();
