@@ -5,6 +5,7 @@ import com.suhiru.sec.securitytestproject.exceptions.CustomizedException;
 import com.suhiru.sec.securitytestproject.model.User;
 import com.suhiru.sec.securitytestproject.service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ public class RegistrationController {
 
     //User registration Controller
     @PostMapping("/registerUser")
+    @CrossOrigin(origins = "http://localhost:4200/")
     public User registerUser(@RequestBody User user) throws Exception {
 
         String tempMailId = user.getEmailId();
@@ -34,6 +36,7 @@ public class RegistrationController {
 
     //User login controller
     @PostMapping("/login")
+    @CrossOrigin(origins = "http://localhost:4200/")
     public User userLogin(@RequestBody User user) throws Exception {
 
         String tempEmailId = user.getEmailId();
